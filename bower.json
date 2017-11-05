@@ -1,0 +1,12 @@
+{
+    "name": "gfalcon-signin-service",
+    "version": "0.0.1",
+    "authors": [
+        "m0cchi <boom.boom.planet@gmail.com>"
+    ],
+    "description": "singin service",
+    "dependencies": {
+        "jquery": "~3.2.1",
+        "skyblue": "1.0.4"
+    }
+}
