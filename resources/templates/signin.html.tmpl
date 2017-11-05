@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>SignIn - gfalcon</title>
+    <link rel="stylesheet" type="text/css" href="/statics/skyblue/css/skyblue.min.css">
+    <script type="text/javascript" src="/statics/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="/statics/js/submit.js"></script>
+  </head>
+  <body>
+    <div class="bg-dark">
+      <div class="container text-center">
+        <h1>SignIn/gfalcon</h1>
+      </div>
+    </div>
+    <div id="container" class="row margin-top-30">
+      <form id="submit-form" class="col md-4 offset-md-4" action="/signin" method="post">
+        <input type="hidden" name="csrf_token" value="{{.csrf_token}}">
+        <input class="form-control" type="text" name="team-id" value=""  placeholder="your team id">
+        <input class="form-control" type="text" name="user-id" value=""  placeholder="your user id">
+        <input class="form-control" type="password" name="password" value="" placeholder="your password">
+        <button id="submit-button" type="button" class="btn">submit</button>
+      </form>
+    </div>
+  </body>
+</html>
