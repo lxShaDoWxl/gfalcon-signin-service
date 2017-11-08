@@ -16,8 +16,8 @@
 [[projects]]
   name = "github.com/gorilla/mux"
   packages = ["."]
-  revision = "24fca303ac6da784b9e8269f724ddeb0b2eea5e7"
-  version = "v1.5.0"
+  revision = "7f08801859139f86dfafd1c296e2cba9a80d292e"
+  version = "v1.6.0"
 
 [[projects]]
   branch = "master"
@@ -35,13 +35,13 @@
   branch = "master"
   name = "github.com/m0cchi/gfalcon"
   packages = [".","complex","model","util"]
-  revision = "fa2961dabdfd9197308219a8f6895194c3736a57"
+  revision = "1a76bc4c29e3101583ac2dfe3699cac09b79a643"
 
 [[projects]]
   branch = "master"
   name = "golang.org/x/crypto"
   packages = ["bcrypt","blowfish"]
-  revision = "bd6f299fb381e4c3393d1c4b1f0b94f5e77650c8"
+  revision = "6a293f2d4b14b8e6d3f0539e383f6d0d30fce3fd"
 
 [solve-meta]
   analyzer-name = "dep"
