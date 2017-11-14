@@ -16,6 +16,8 @@ import (
 	"os"
 )
 
+const MaxAge = 1 * 60 * 60 * 24
+
 var db *sqlx.DB
 var templates *template.Template
 var allowedHost string
@@ -68,18 +70,29 @@ func submitSigninForm(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	cookie := http.Cookie{
+	expires := session.UpdateDate.AddDate(0, 0, 1)
+	cgsession := http.Cookie{
 		Name:     "gfalcon.session",
 		Value:    session.SessionID,
-		Expires:  session.UpdateDate.AddDate(0, 0, 7),
-		MaxAge:   7 * 60 * 60 * 24,
+		Expires:  expires,
+		MaxAge:   MaxAge,
+		HttpOnly: true,
+	}
+
+	cgiid := http.Cookie{
+		Name:     "gfalcon.iid",
+		Value:    fmt.Sprintf("%d", session.UserIID),
+		Expires:  expires,
+		MaxAge:   MaxAge,
 		HttpOnly: true,
 	}
 
 	if allowedHost != "" {
-		cookie.Domain = allowedHost
+		cgsession.Domain = allowedHost
+		cgiid.Domain = allowedHost
 	}
-	http.SetCookie(w, &cookie)
+	http.SetCookie(w, &cgsession)
+	http.SetCookie(w, &cgiid)
 
 	authResponse.Ok = true
 	json.NewEncoder(w).Encode(authResponse)
