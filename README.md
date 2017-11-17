@@ -16,7 +16,7 @@ $ # patch -u app/server.go < patch/secure.patch
 $ go run app/server.go --dbhost 'user:password@unix(/tmp/mysql.sock)/gfalcon?parseTime=true&loc=Asia%2FTokyo'
 ```
 
-# feature
+# Feature
 This product is SingIn Service.
 If authentication succeeds, user got `gfalcon.session` and `gfalcon.iid` in cookie.
 SP verifies whether it has been authenticated using `gfalcon.session` and  `gfalcon.iid`.
