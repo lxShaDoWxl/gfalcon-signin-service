@@ -11,6 +11,8 @@ $ mysql -u $USER -p -D gfalcon < create_defaultdata.sql
 $ cd ../../../../../../
 $ bower install
 $ go run test/init_data.go --dbhost 'user:password@unix(/tmp/mysql.sock)/gfalcon?parseTime=true'
+$ # if you want to use cookies only with https
+$ # patch -u app/server.go < patch/secure.patch
 $ go run app/server.go --dbhost 'user:password@unix(/tmp/mysql.sock)/gfalcon?parseTime=true&loc=Asia%2FTokyo'
 ```
 

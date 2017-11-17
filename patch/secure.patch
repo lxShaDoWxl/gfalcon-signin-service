@@ -1,0 +1,18 @@
+--- server.go	2017-11-18 04:28:52.000000000 +0900
++++ secure.go	2017-11-18 04:26:59.000000000 +0900
+@@ -76,6 +76,7 @@
+ 		Value:    session.SessionID,
+ 		Expires:  expires,
+ 		MaxAge:   MaxAge,
++		Secure:   true,
+ 		HttpOnly: true,
+ 	}
+ 
+@@ -84,6 +85,7 @@
+ 		Value:    fmt.Sprintf("%d", session.UserIID),
+ 		Expires:  expires,
+ 		MaxAge:   MaxAge,
++		Secure:   true,
+ 		HttpOnly: true,
+ 	}
+ 
