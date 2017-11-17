@@ -18,8 +18,8 @@ $ go run app/server.go --dbhost 'user:password@unix(/tmp/mysql.sock)/gfalcon?par
 
 # feature
 This product is SingIn Service.
-If authentication succeeds, user got `gfalcon.session` in cookie.
-SP verifies whether it has been authenticated using `gfalcon.session`.
+If authentication succeeds, user got `gfalcon.session` and `gfalcon.iid` in cookie.
+SP verifies whether it has been authenticated using `gfalcon.session` and  `gfalcon.iid`.
 
 # TODO
 - SSO View
